@@ -21,7 +21,7 @@ class CompanyFactory extends Factory
     {
         return [
             'name' => $this->faker->company,
-            'user_id' => User::factory(), // Привязка к пользователю (продавцу)
+            'user_id' => User::factory(),
             'is_active' => $this->faker->boolean,
         ];
     }

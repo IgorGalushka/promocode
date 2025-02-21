@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('promocodes', function (Blueprint $table) {
             $table->id();
-            $table->string('code')->unique(); // Код промокода
-            $table->foreignId('company_id')->constrained('companies')->onDelete('cascade'); // Продавец (Компания)
-            $table->decimal('discount', 5, 2); // Скидка
-            $table->boolean('is_active')->default(true); // Статус активации
+            $table->string('code')->unique();
+            $table->foreignId('company_id')->constrained('companies')->cascadeOnDelete();
+            $table->decimal('discount', 5, 2);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

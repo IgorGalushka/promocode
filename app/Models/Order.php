@@ -15,13 +15,11 @@ class Order extends Model
         'user_id',
     ];
 
-    // Связь с компанией (продавец)
     public function company()
     {
         return $this->belongsTo(Company::class, 'company_id');
     }
 
-    // Связь с пользователем (клиент)
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

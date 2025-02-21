@@ -19,13 +19,11 @@ class User extends Authenticatable
         'role',
     ];
 
-    // Связь с таблицей компаний (продавец)
     public function companies()
     {
         return $this->hasMany(Company::class, 'user_id');
     }
 
-    // Связь с таблицей заказов (клиент)
     public function orders()
     {
         return $this->hasMany(Order::class, 'user_id');
